@@ -42,7 +42,7 @@ The following papers have been implemented (fully or partially) in these forks:
 - [P3595R0 -- Configuration of Contract Evaluation Semantics](https://wg21.link/P3595R0)
 - [P4283R0 -- Requires clauses for Contract Assertions](https://wg21.link/P4283R0)
 - [P4298R0 -- Nonthrowing Evaluation Semantics](https://wg21.link/P4298R0)
-- D4299 -- C++ Contracts for C (not yet submitted to WG21)
+- D4299 -- C++ Contracts for C (not yet submitted to WG14 or WG21)
 - D4301 -- Context Reports for the Contract-Violation Handler (not yet submitted to WG21)
 
 ## Tools
