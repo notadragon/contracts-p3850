@@ -47,6 +47,11 @@ The following papers have been implemented (fully or partially) in these forks:
 - D4299 -- C++ Contracts for C (not yet submitted to WG14 or WG21)
 - D4301 -- Context Reports for the Contract-Violation Handler (not yet submitted to WG21)
 
+## Examples
+
+The [examples](examples/README.md) directory has short examples of using
+contracts, each with links to try it in Compiler Explorer.
+
 ## Tools
 
 This repository also includes some additional tools for working with and verifying

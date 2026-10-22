@@ -1,0 +1,40 @@
+%%% config
+{
+  "language": "c++",
+  "view": "single",
+  "matchers": [
+    {
+      "name": "stderr0",
+      "regex": "divide\\(7, 2\\) = 3"
+    }
+  ],
+  "compilers": [
+    {
+      "id": "gcc_p3850",
+      "options": "-std=c++26 -O0 -g",
+      "source": "example.cpp",
+      "execute": true,
+      "expect_runtime_error": true,
+      "execute_stderr": [
+        "stderr0"
+      ]
+    }
+  ]
+}
+%%% source example.cpp
+#include <cstdio>
+
+int divide(const int numerator, const int denominator)
+  pre (denominator != 0)
+  post (r : r * denominator <= numerator)
+{
+  int result = numerator / denominator;
+  contract_assert(result * denominator <= numerator);
+  return result;
+}
+
+int main()
+{
+  std::fprintf(stderr, "divide(7, 2) = %d\n", divide(7, 2));
+  std::fprintf(stderr, "divide(1, 0) = %d\n", divide(1, 0));  // violation
+}

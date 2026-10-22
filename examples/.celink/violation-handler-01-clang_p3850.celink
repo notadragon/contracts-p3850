@@ -1,0 +1,57 @@
+%%% config
+{
+  "language": "c++",
+  "view": "single",
+  "matchers": [
+    {
+      "name": "stdout0",
+      "regex": "contract violated at .*:11: "
+    },
+    {
+      "name": "stdout1",
+      "regex": "contract violated at .*:14: "
+    },
+    {
+      "name": "stdout2",
+      "regex": "done"
+    }
+  ],
+  "compilers": [
+    {
+      "id": "clang_p3850",
+      "options": "-std=c++26 -O0 -g -fcontract-evaluation-semantic=observe",
+      "source": "example.cpp",
+      "execute": true,
+      "expect_runtime_success": true,
+      "execute_stdout": [
+        "stdout0",
+        "stdout1",
+        "stdout2"
+      ]
+    }
+  ]
+}
+%%% source example.cpp
+#include <contracts>
+#include <cstdio>
+
+void handle_contract_violation(const std::contracts::contract_violation& v)
+{
+  std::printf("contract violated at %s:%u: %s\n",
+              v.location().file_name(), v.location().line(), v.comment());
+}
+
+int f(const int x)
+  pre (x > 0)
+  post (r : r > x)
+{
+  contract_assert(x < 100);
+  return x + 1;
+}
+
+int main()
+{
+  f(0);    // precondition violated
+  f(200);  // assertion violated
+  std::printf("done\n");
+}

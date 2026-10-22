@@ -1,0 +1,12 @@
+{
+  "default": [
+    {"label": "GCC 16.1", "id": "gcc_16_1_0",
+     "options": "-std=c++26 -fcontracts -O0 -g"},
+    {"label": "GCC P3850", "id": "gcc_p3850",
+     "options": "-std=c++26 -O0 -g"},
+    {"label": "Clang P3850", "id": "clang_p3850",
+     "options": "-std=c++26 -O0 -g"},
+    {"label": "EDG P3850", "id": "edg_eccp_p3850",
+     "options": "--c++26"}
+  ]
+}
