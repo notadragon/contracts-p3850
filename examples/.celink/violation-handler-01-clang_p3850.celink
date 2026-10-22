@@ -1,7 +1,7 @@
 %%% config
 {
   "language": "c++",
-  "view": "single",
+  "view": "single+output",
   "matchers": [
     {
       "name": "stdout0",

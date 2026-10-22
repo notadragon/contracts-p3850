@@ -31,7 +31,7 @@ int main()
 }
 ```
 <!-- celink {"exclude": ["edg_eccp_p3850"], "options": "-fcontract-evaluation-semantic=observe", "expect": "success", "stdout": ["contract violated at .*:11: ", "contract violated at .*:14: ", "done"]} -->
-Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/PGhGjfE51) | [GCC P3850](https://godbolt.org/z/f3sTjcMvY) | [Clang P3850](https://godbolt.org/z/f8cozEYzv)
+Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/fer36aGav) | [GCC P3850](https://godbolt.org/z/EPWMqPGx7) | [Clang P3850](https://godbolt.org/z/aP9n6bvx4)
 <!-- /celink -->
 
 These links compile with `-fcontract-evaluation-semantic=observe`.  Under

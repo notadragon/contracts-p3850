@@ -30,7 +30,7 @@ int main()
 }
 ```
 <!-- celink {"expect": "error", "stderr": ["divide\\(7, 2\\) = 3"]} -->
-Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/13v3bdTvd) | [GCC P3850](https://godbolt.org/z/YeM8fs4Kz) | [Clang P3850](https://godbolt.org/z/vqKWE5Ybd) | [EDG P3850](https://godbolt.org/z/dxex39eTq)
+Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/aT4b79G48) | [GCC P3850](https://godbolt.org/z/73nPGr7Wq) | [Clang P3850](https://godbolt.org/z/av1xEGda7) | [EDG P3850](https://godbolt.org/z/sd9a96YWz)
 <!-- /celink -->
 
 The first call satisfies every contract assertion.  The second violates the

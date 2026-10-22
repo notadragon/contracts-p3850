@@ -124,7 +124,7 @@ def celink_text(compiler, settings, code):
         entry["expect_runtime_error"] = True
     elif expect is not None:
         sys.exit(f"error: unknown expect value {expect!r}")
-    config = {"language": "c++", "view": "single"}
+    config = {"language": "c++", "view": "single+output"}
     matchers = []
     for stream in ("stdout", "stderr"):
         names = []
