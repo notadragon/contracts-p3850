@@ -2,39 +2,35 @@
 {
   "language": "c++",
   "view": "single+output",
-  "matchers": [
-    {
-      "name": "stderr0",
-      "regex": "divide\\(7, 2\\) = 3"
-    }
-  ],
   "compilers": [
     {
       "id": "clang_p3850",
       "options": "-std=c++26 -O0 -g",
       "source": "example.cpp",
       "execute": true,
-      "expect_runtime_error": true,
-      "execute_stderr": [
-        "stderr0"
-      ]
+      "expect_runtime_error": true
     }
   ]
 }
 %%% source example.cpp
-#include <cstdio>
-
-int divide(const int numerator, const int denominator)
-  pre (denominator != 0)
-  post (r : r * denominator <= numerator)
+int f(const int x)
+  pre (x != 1)                // a precondition assertion
+  post(r : r == x && r != 2)  // a postcondition assertion; `r` names the result object of `f`
 {
-  int result = numerator / denominator;
-  contract_assert(result * denominator <= numerator);
-  return result;
+  contract_assert (x != 3);   // an assertion statement
+  return x;
+}
+
+void g()
+{
+  f(0);  // no contract violation
+  f(1);  // violates precondition assertion of `f`
+  f(2);  // violates postcondition assertion of `f`
+  f(3);  // violates assertion statement within `f`
+  f(4);  // no contract violation
 }
 
 int main()
 {
-  std::fprintf(stderr, "divide(7, 2) = %d\n", divide(7, 2));
-  std::fprintf(stderr, "divide(1, 0) = %d\n", divide(1, 0));  // violation
+  g();
 }

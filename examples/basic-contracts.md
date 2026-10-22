@@ -8,35 +8,43 @@ C++26 contract assertions come in three forms:
 - an *assertion statement*, `contract_assert(predicate);`, checked where it
   appears in a function body.
 
-Function parameters named in a postcondition must be `const`, so that the
-postcondition sees the values the function was called with.
+The following example, from [P2900R14](https://wg21.link/P2900R14),
+contains all three:
 
 ```cpp
-#include <cstdio>
-
-int divide(const int numerator, const int denominator)
-  pre (denominator != 0)
-  post (r : r * denominator <= numerator)
+int f(const int x)
+  pre (x != 1)                // a precondition assertion
+  post(r : r == x && r != 2)  // a postcondition assertion; `r` names the result object of `f`
 {
-  int result = numerator / denominator;
-  contract_assert(result * denominator <= numerator);
-  return result;
+  contract_assert (x != 3);   // an assertion statement
+  return x;
+}
+
+void g()
+{
+  f(0);  // no contract violation
+  f(1);  // violates precondition assertion of `f`
+  f(2);  // violates postcondition assertion of `f`
+  f(3);  // violates assertion statement within `f`
+  f(4);  // no contract violation
 }
 
 int main()
 {
-  std::fprintf(stderr, "divide(7, 2) = %d\n", divide(7, 2));
-  std::fprintf(stderr, "divide(1, 0) = %d\n", divide(1, 0));  // violation
+  g();
 }
 ```
-<!-- celink {"expect": "error", "stderr": ["divide\\(7, 2\\) = 3"]} -->
-Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/aT4b79G48) | [GCC P3850](https://godbolt.org/z/73nPGr7Wq) | [Clang P3850](https://godbolt.org/z/av1xEGda7) | [EDG P3850](https://godbolt.org/z/sd9a96YWz)
+<!-- celink {"expect": "error"} -->
+Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/5WGh8d6bq) | [GCC P3850](https://godbolt.org/z/hEn3cooz6) | [Clang P3850](https://godbolt.org/z/fYYT96c1x) | [EDG P3850](https://godbolt.org/z/bzGMM4WsM)
 <!-- /celink -->
 
-The first call satisfies every contract assertion.  The second violates the
-precondition.  Under the default *enforce* evaluation semantic the default
-contract-violation handler reports the violation and the program terminates,
-so the division by zero is never reached.
+Function parameters named in a postcondition must be `const`, so that the
+postcondition sees the values the function was called with.
+
+Under the default *enforce* evaluation semantic, the default
+contract-violation handler reports the first violation, the precondition of
+`f(1)`, and the program terminates, so the later calls are never made.
+Remove or reorder the calls in `g` to see the other violations.
 
 EDG on Compiler Explorer uses EDG's C back end, which supports only the
 *ignore* and *quick_enforce* evaluation semantics, so there the violation
