@@ -1,7 +1,7 @@
 {
   "default": [
-    {"label": "GCC 16.1", "id": "gcc_16_1_0",
-     "options": "-std=c++26 -fcontracts -O0 -g"},
+    {"label": "GCC 16.2", "id": "gcc_16_2_0",
+     "options": "-std=c++26 -lstdc++exp -O0 -g"},
     {"label": "GCC P3850", "id": "gcc_p3850",
      "options": "-std=c++26 -O0 -g"},
     {"label": "Clang P3850", "id": "clang_p3850",

@@ -1,0 +1,7 @@
+[
+  {
+    "short_url": "https://godbolt.org/z/rdY1n8bKo",
+    "target": "godbolt",
+    "url": "https://godbolt.org/#g:!((g:!((g:!((h:codeEditor,i:(j:1,lang:c%2B%2B,source:'int+f(const+int+x)%0A++pre+(x+!!%3D+1)++++++++++++++++//+a+precondition+assertion%0A++post(r+:+r+%3D%3D+x+%26%26+r+!!%3D+2)++//+a+postcondition+assertion%3B+%60r%60+names+the+result+object+of+%60f%60%0A%7B%0A++contract_assert+(x+!!%3D+3)%3B+++//+an+assertion+statement%0A++return+x%3B%0A%7D%0A%0Avoid+g()%0A%7B%0A++f(0)%3B++//+no+contract+violation%0A++f(1)%3B++//+violates+precondition+assertion+of+%60f%60%0A++f(2)%3B++//+violates+postcondition+assertion+of+%60f%60%0A++f(3)%3B++//+violates+assertion+statement+within+%60f%60%0A++f(4)%3B++//+no+contract+violation%0A%7D%0A%0Aint+main()%0A%7B%0A++g()%3B%0A%7D'),l:'5',n:'0',t:'0')),k:33.333333333333336,l:'4'),(g:!((h:compiler,i:(compiler:g162,filters:(b:'0',binary:'1',binaryObject:'1',commentOnly:'0',debugCalls:'1',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'1',trim:'1'),j:1,lang:c%2B%2B,libs:!(),options:'-std%3Dc%2B%2B26+-lstdc%2B%2Bexp+-O0+-g',source:1),l:'5',n:'0',t:'0')),k:33.333333333333336,l:'4'),(g:!((h:output,i:(editorid:1,j:1,wrap:'1'),l:'5',n:'0',t:'0')),k:33.333333333333336,l:'4')),l:'2')),version:4"
+  }
+]

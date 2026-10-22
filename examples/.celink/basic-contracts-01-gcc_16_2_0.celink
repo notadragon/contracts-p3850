@@ -4,8 +4,8 @@
   "view": "single+output",
   "compilers": [
     {
-      "id": "gcc_16_1_0",
-      "options": "-std=c++26 -fcontracts -O0 -g",
+      "id": "gcc_16_2_0",
+      "options": "-std=c++26 -lstdc++exp -O0 -g",
       "source": "example.cpp",
       "execute": true,
       "expect_runtime_error": true

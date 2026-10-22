@@ -18,8 +18,8 @@
   ],
   "compilers": [
     {
-      "id": "gcc_16_1_0",
-      "options": "-std=c++26 -fcontracts -O0 -g -fcontract-evaluation-semantic=observe",
+      "id": "gcc_16_2_0",
+      "options": "-std=c++26 -lstdc++exp -O0 -g -fcontract-evaluation-semantic=observe",
       "source": "example.cpp",
       "execute": true,
       "expect_runtime_success": true,

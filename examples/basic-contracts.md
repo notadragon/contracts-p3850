@@ -35,7 +35,7 @@ int main()
 }
 ```
 <!-- celink {"expect": "error"} -->
-Try it on Compiler Explorer: [GCC 16.1](https://godbolt.org/z/5WGh8d6bq) | [GCC P3850](https://godbolt.org/z/hEn3cooz6) | [Clang P3850](https://godbolt.org/z/fYYT96c1x) | [EDG P3850](https://godbolt.org/z/bzGMM4WsM)
+Try it on Compiler Explorer: [GCC 16.2](https://godbolt.org/z/rdY1n8bKo) | [GCC P3850](https://godbolt.org/z/hEn3cooz6) | [Clang P3850](https://godbolt.org/z/fYYT96c1x) | [EDG P3850](https://godbolt.org/z/bzGMM4WsM)
 <!-- /celink -->
 
 Function parameters named in a postcondition must be `const`, so that the
