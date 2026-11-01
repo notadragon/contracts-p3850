@@ -56,6 +56,37 @@ and is in the [drafts](drafts/) directory:
 - [D4301R0 -- Context Reports for the Contract-Violation Handler](drafts/D4301R0.pdf) (work in progress)
 - [D4405R0 -- Proving Contract Assertions Are Not Violated](drafts/D4405R0.pdf) (work in progress)
 
+## Additional Features
+
+These compilers also provide some features that are not proposed for the
+C++ Standard or in any specific paper.  They exist to support
+experimentation and are not part of any proposed design.
+
+### `-fcontracts-allow-assume`
+
+[P3100R9](https://wg21.link/P3100R9) introduces the `assume` evaluation
+semantic, under which a contract predicate is not evaluated and the
+compiler may instead assume that it holds.  A violation of such a contract
+assertion is undefined behavior.  P3100 uses this semantic only for
+implicit contract assertions; no paper proposes allowing it for contract
+assertions written in the source.
+
+All three compilers support `-fcontracts-allow-assume`, which allows the
+`assume` semantic to be selected for contract assertions in the source
+(through `-fcontract-evaluation-semantic=assume`, a group or configuration
+entry, and so on).  Without this flag, an explicit contract assertion
+whose semantic resolves to `assume` is treated as `ignore` instead.
+Implicit contract assertions do not need the flag.
+
+With this flag, a [P3400R5](https://wg21.link/P3400R5) label can also
+produce the `assume` semantic: `assume` may appear in the label's
+`allowed_semantics`, and its `compute_semantic` may return it.  Without
+the flag, a label whose `compute_semantic` returns `assume` is ill-formed.
+
+When the flag is in effect and contracts are enabled, the macro
+`__gcc_contracts_allow_assume` (GCC, and EDG in GCC mode) or
+`__clang_contracts_allow_assume` (Clang, and EDG in Clang mode) is defined.
+
 ## Examples
 
 The [examples](examples/README.md) directory has short examples of using
