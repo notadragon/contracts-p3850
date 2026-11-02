@@ -87,6 +87,28 @@ When the flag is in effect and contracts are enabled, the macro
 `__gcc_contracts_allow_assume` (GCC, and EDG in GCC mode) or
 `__clang_contracts_allow_assume` (Clang, and EDG in Clang mode) is defined.
 
+### `-fcontract-violation-information=full|none`
+
+By default (`full`), each contract assertion checked at run time puts its
+source location (file, function, line and column), its comment (the text
+of the predicate) and any user-supplied message into the object file, for
+the violation handler to report.  With
+`-fcontract-violation-information=none`, all three compilers leave this
+information out: the handler sees an empty file and function name, line
+and column 0, an empty comment and no message.  The kind, semantic and
+detection mode are still reported, and compile-time diagnostics keep their
+locations.
+
+This applies to explicit and implicit contract assertions, in C++ and
+(with GCC and Clang, which implement contracts for C) in C.
+The `assert` macro of [P3290R6](https://wg21.link/P3290R6) and the
+default location of its violation-handling functions follow it too, through
+the macro `__gcc_contracts_violation_information_none` (GCC, and EDG in GCC
+mode) or `__clang_contracts_violation_information_none` (Clang, and EDG in
+Clang mode), defined under `none`.  Sanitizer metadata is not affected;
+`-ffile-prefix-map` remaps the paths in it, as it does the file name of a
+contract violation under `full`.
+
 ## Examples
 
 The [examples](examples/README.md) directory has short examples of using
