@@ -17,7 +17,7 @@ the upstream compilers.  (Work to upstream those fixes is ongoing).
 
 | Repository | Open Issues | Bug Reports |
 |---|---|---|
-| [GCC](https://github.com/notadragon/gnu_gcc/tree/contracts-p3850) | [90](https://github.com/notadragon/gnu_gcc/tree/contracts-p3850/open-issues) | [137](https://github.com/notadragon/gnu_gcc/tree/contracts-p3850/bug-reports) |
+| [GCC](https://github.com/notadragon/gnu_gcc/tree/contracts-p3850) | [90](https://github.com/notadragon/gnu_gcc/tree/contracts-p3850/open-issues) | [138](https://github.com/notadragon/gnu_gcc/tree/contracts-p3850/bug-reports) |
 | [Clang](https://github.com/notadragon/llvm-project/tree/contracts-p3850) | [72](https://github.com/notadragon/llvm-project/tree/contracts-p3850/open-issues) | [32](https://github.com/notadragon/llvm-project/tree/contracts-p3850/bug-reports) |
 | [EDG](https://github.com/notadragon/edgcpp_compiler/tree/contracts-p3850) | [33](https://github.com/notadragon/edgcpp_compiler/tree/contracts-p3850/open-issues) | [23](https://github.com/notadragon/edgcpp_compiler/tree/contracts-p3850/bug-reports) |
 
