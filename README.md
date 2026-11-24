@@ -1,8 +1,8 @@
 # C++ Contracts and Extensions
 
 C++26 includes support for contract assertions, adopted with
-[P2900R14](https://wg21.link/P2900R14), also known as the Contracts MVP.
-[P3850R0](https://wg21.link/P3850R0) lays out a plan for extending that
+[P2900R14](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2025/p2900r14.pdf), also known as the Contracts MVP.
+[P3850R0](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3850r0.pdf) lays out a plan for extending that
 initial MVP to support a much wider range of use cases in C++29 and beyond.
 This project covers the ongoing work to implement those papers and,
 eventually, more forward-looking papers that will build even further
@@ -37,22 +37,22 @@ The following papers have been adopted into the C++ draft standard and are
 implemented on these forks, along with bug fixes for any known issues related
 to these papers that exist in upstream compilers:
 
-- [P2900R14 -- Contracts for C++](https://wg21.link/P2900R14)
-- [P4451R2 -- Early Adoption of an Always-Enforced Label](https://wg21.link/P4451R2)
-- [P3097R3 -- Contracts for C++: Virtual functions](https://wg21.link/P3097R3)
+- [P2900R14 -- Contracts for C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2025/p2900r14.pdf)
+- [P4451R2 -- Early Adoption of an Always-Enforced Label](https://isocpp.org/files/papers/P4451R2.pdf)
+- [P3097R3 -- Contracts for C++: Virtual functions](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3097r3.pdf)
 
 The following papers have been implemented (fully or partially) in these
 forks.  Where a newer draft revision exists, it follows the published paper
 and is in the [drafts](https://github.com/notadragon/contracts-p3850/tree/main/drafts) directory:
 
-- [P3098R2 -- Contracts for C++: Postcondition captures](https://wg21.link/P3098R2), [D3098R3](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D3098R3.pdf)
-- [P3099R3 -- Contracts for C++: User-defined diagnostic messages](https://wg21.link/P3099R3)
-- [P3100R9 -- A framework for systematically addressing undefined behaviour in the C++ Standard](https://wg21.link/P3100R9)
-- [P3290R6 -- Integrating Existing Assertions With Contracts](https://wg21.link/P3290R6)
-- [P3400R5 -- Controlling Contract-Assertion Properties](https://wg21.link/P3400R5)
-- [P3595R0 -- Configuration of Contract Evaluation Semantics](https://wg21.link/P3595R0), [D3595R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D3595R1.pdf)
-- [P4283R0 -- Requires clauses for Contract Assertions](https://wg21.link/P4283R0), [D4283R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4283R1.pdf)
-- [P4298R0 -- Nonthrowing Evaluation Semantics](https://wg21.link/P4298R0), [D4298R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4298R1.pdf)
+- [P3098R2 -- Contracts for C++: Postcondition captures](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3098r2.pdf), [D3098R3](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D3098R3.pdf)
+- [P3099R3 -- Contracts for C++: User-defined diagnostic messages](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3099r3.pdf)
+- [P3100R9 -- A framework for systematically addressing undefined behaviour in the C++ Standard](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3100r9.pdf)
+- [P3290R6 -- Integrating Existing Assertions With Contracts](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3290r6.pdf)
+- [P3400R5 -- Controlling Contract-Assertion Properties](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3400r5.pdf)
+- [P3595R0 -- Configuration of Contract Evaluation Semantics](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3595r0.pdf), [D3595R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D3595R1.pdf)
+- [P4283R0 -- Requires clauses for Contract Assertions](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p4283r0.pdf), [D4283R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4283R1.pdf)
+- [P4298R0 -- Nonthrowing Evaluation Semantics](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p4298r0.pdf), [D4298R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4298R1.pdf)
 - [D4299R0 -- C++ Contracts for C](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4299R0.pdf) (work in progress)
 - [D4301R0 -- Context Reports for the Contract-Violation Handler](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4301R0.pdf) (work in progress)
 - [D4405R0 -- Proving Contract Assertions Are Not Violated](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4405R0.pdf) (work in progress)
@@ -65,7 +65,7 @@ experimentation and are not part of any proposed design.
 
 ### `-fcontracts-allow-assume`
 
-[P3100R9](https://wg21.link/P3100R9) introduces the `assume` evaluation
+[P3100R9](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3100r9.pdf) introduces the `assume` evaluation
 semantic, under which a contract predicate is not evaluated and the
 compiler may instead assume that it holds.  A violation of such a contract
 assertion is undefined behavior.  P3100 uses this semantic only for
@@ -79,7 +79,7 @@ entry, and so on).  Without this flag, an explicit contract assertion
 whose semantic resolves to `assume` is treated as `ignore` instead.
 Implicit contract assertions do not need the flag.
 
-With this flag, a [P3400R5](https://wg21.link/P3400R5) label can also
+With this flag, a [P3400R5](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3400r5.pdf) label can also
 produce the `assume` semantic: `assume` may appear in the label's
 `allowed_semantics`, and its `compute_semantic` may return it.  Without
 the flag, a label whose `compute_semantic` returns `assume` is ill-formed.
@@ -102,7 +102,7 @@ locations.
 
 This applies to explicit and implicit contract assertions, in C++ and
 (with GCC and Clang, which implement contracts for C) in C.
-The `assert` macro of [P3290R6](https://wg21.link/P3290R6) and the
+The `assert` macro of [P3290R6](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2026/p3290r6.pdf) and the
 default location of its violation-handling functions follow it too, through
 the macro `__gcc_contracts_violation_information_none` (GCC, and EDG in GCC
 mode) or `__clang_contracts_violation_information_none` (Clang, and EDG in
