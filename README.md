@@ -38,23 +38,24 @@ implemented on these forks, along with bug fixes for any known issues related
 to these papers that exist in upstream compilers:
 
 - [P2900R14 -- Contracts for C++](https://wg21.link/P2900R14)
+- [P4451R2 -- Early Adoption of an Always-Enforced Label](https://wg21.link/P4451R2)
 - [P3097R3 -- Contracts for C++: Virtual functions](https://wg21.link/P3097R3)
 
 The following papers have been implemented (fully or partially) in these
 forks.  Where a newer draft revision exists, it follows the published paper
-and is in the [drafts](drafts/) directory:
+and is in the [drafts](https://github.com/notadragon/contracts-p3850/tree/main/drafts) directory:
 
-- [P3098R2 -- Contracts for C++: Postcondition captures](https://wg21.link/P3098R2), [D3098R3](drafts/D3098R3.pdf)
+- [P3098R2 -- Contracts for C++: Postcondition captures](https://wg21.link/P3098R2), [D3098R3](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D3098R3.pdf)
 - [P3099R3 -- Contracts for C++: User-defined diagnostic messages](https://wg21.link/P3099R3)
 - [P3100R9 -- A framework for systematically addressing undefined behaviour in the C++ Standard](https://wg21.link/P3100R9)
 - [P3290R6 -- Integrating Existing Assertions With Contracts](https://wg21.link/P3290R6)
 - [P3400R5 -- Controlling Contract-Assertion Properties](https://wg21.link/P3400R5)
-- [P3595R0 -- Configuration of Contract Evaluation Semantics](https://wg21.link/P3595R0), [D3595R1](drafts/D3595R1.pdf)
-- [P4283R0 -- Requires clauses for Contract Assertions](https://wg21.link/P4283R0), [D4283R1](drafts/D4283R1.pdf)
-- [P4298R0 -- Nonthrowing Evaluation Semantics](https://wg21.link/P4298R0), [D4298R1](drafts/D4298R1.pdf)
-- [D4299R0 -- C++ Contracts for C](drafts/D4299R0.pdf) (work in progress)
-- [D4301R0 -- Context Reports for the Contract-Violation Handler](drafts/D4301R0.pdf) (work in progress)
-- [D4405R0 -- Proving Contract Assertions Are Not Violated](drafts/D4405R0.pdf) (work in progress)
+- [P3595R0 -- Configuration of Contract Evaluation Semantics](https://wg21.link/P3595R0), [D3595R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D3595R1.pdf)
+- [P4283R0 -- Requires clauses for Contract Assertions](https://wg21.link/P4283R0), [D4283R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4283R1.pdf)
+- [P4298R0 -- Nonthrowing Evaluation Semantics](https://wg21.link/P4298R0), [D4298R1](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4298R1.pdf)
+- [D4299R0 -- C++ Contracts for C](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4299R0.pdf) (work in progress)
+- [D4301R0 -- Context Reports for the Contract-Violation Handler](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4301R0.pdf) (work in progress)
+- [D4405R0 -- Proving Contract Assertions Are Not Violated](https://github.com/notadragon/contracts-p3850/blob/main/drafts/D4405R0.pdf) (work in progress)
 
 ## Additional Features
 
@@ -111,7 +112,7 @@ contract violation under `full`.
 
 ## Examples
 
-The [examples](examples/README.md) directory has short examples of using
+The [examples](https://github.com/notadragon/contracts-p3850/blob/main/examples/README.md) directory has short examples of using
 contracts, each with links to try it in Compiler Explorer.
 
 ## Tools
